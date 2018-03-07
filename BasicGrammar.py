@@ -1,6 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
-#hello.py
+
 import  math
 
 
@@ -104,8 +104,8 @@ def cal(numbers):
 print(cal([1,2,3]))
 
 #关键字参数
-def person(name, age, **kw):
-    print('name:',name,'age:',age,'other:',**kw)
+'''def person(name, age, **kw):
+    print('name:',name,'age:',age,'other:',**kw)'''
 
 def fact(n):
     if n==1:
