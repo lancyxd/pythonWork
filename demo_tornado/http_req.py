@@ -1,6 +1,7 @@
 import tornado.ioloop
 import tornado.web
 import json
+import logging
 
 #curl -XPOST 'http://10.133.146.50:8888/tenant?user=lily&age=5' -d'{"appid":["10001","10002"]}'
 
@@ -15,13 +16,17 @@ class TenantHandler(tornado.web.RequestHandler):
         appid=payload['appid']
         #获取参数，进行其它的处理
 
+        #if True:
+        #   self.write(tornado.web.HTTPError(status_code=500, log_message="error"))
+
         result = {
             "code": 0,
             "msg": "ok",
             "data": {'user':v,'age':a,'num':appid}
         }
-
+        logging.debug(json.dumps(result))
         self.write(json.dumps(result))
+
 
 #DELETE方法
 class TenantDelHandler(tornado.web.RequestHandler):
